@@ -19,10 +19,10 @@
     <ClCompile Include="..\..\..\addons\ofxSTL\src\ofxSTLImporter.cpp">
       <Filter>addons\ofxSTL\src</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Kote\Desktop\ofxMarchingCubes-master\metaball-example\src\main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Kote\Desktop\ofxMarchingCubes-master\metaball-example\src\testApp.cpp">
+    <ClCompile Include="src\testApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,10 +113,10 @@
     <ClInclude Include="..\..\..\addons\ofxSTL\src\utils\ofxSTLWriterBase.h">
       <Filter>addons\ofxSTL\src\utils</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Kote\Desktop\ofxMarchingCubes-master\metaball-example\src\MetaBall.h">
+    <ClInclude Include="src\MetaBall.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Kote\Desktop\ofxMarchingCubes-master\metaball-example\src\testApp.h">
+    <ClInclude Include="src\testApp.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

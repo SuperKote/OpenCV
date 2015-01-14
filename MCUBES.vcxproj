@@ -25,7 +25,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
@@ -58,15 +58,15 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxVectorMath\libs;..\..\..\addons\ofxVectorMath\src;..\..\..\addons\ofx3DUtils\libs;..\..\..\addons\ofx3DUtils\src;..\..\..\addons\ofxMarchingCubes\libs;..\..\..\addons\ofxMarchingCubes\src;..\..\..\addons\ofxSTL\libs;..\..\..\addons\ofxSTL\src;..\..\..\addons\ofxSTL\src\utils;$(OPENCV_DIR)\..\..\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxVectorMath\libs;..\..\..\addons\ofxVectorMath\src;..\..\..\addons\ofx3DUtils\libs;..\..\..\addons\ofx3DUtils\src;..\..\..\addons\ofxMarchingCubes\libs;..\..\..\addons\ofxMarchingCubes\src;..\..\..\addons\ofxSTL\libs;..\..\..\addons\ofxSTL\src;..\..\..\addons\ofxSTL\src\utils;$(OPENCV_DIR)\include</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>opencv_core231d.lib;opencv_imgproc231d.lib;opencv_highgui231d.lib;opencv_ml231d.lib;opencv_video231d.lib;opencv_features2d231d.lib;opencv_calib3d231d.lib;opencv_objdetect231d.lib;opencv_contrib231d.lib;opencv_legacy231d.lib;opencv_flann231d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OPENCV_DIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_calib3d2410d.lib;opencv_contrib2410d.lib;opencv_core2410d.lib;opencv_features2d2410d.lib;opencv_flann2410d.lib;opencv_gpu2410d.lib;opencv_highgui2410d.lib;opencv_imgproc2410d.lib;opencv_legacy2410d.lib;opencv_ml2410d.lib;opencv_nonfree2410d.lib;opencv_objdetect2410d.lib;opencv_ocl2410d.lib;opencv_photo2410d.lib;opencv_stitching2410d.lib;opencv_superres2410d.lib;opencv_ts2410d.lib;opencv_video2410d.lib;opencv_videostab2410d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OPENCV_DIR)\x86\vc12\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -96,8 +96,8 @@
     <ClCompile Include="..\..\..\addons\ofxMarchingCubes\src\ofxMarchingCubes.cpp" />
     <ClCompile Include="..\..\..\addons\ofxSTL\src\ofxSTLExporter.cpp" />
     <ClCompile Include="..\..\..\addons\ofxSTL\src\ofxSTLImporter.cpp" />
-    <ClCompile Include="C:\Users\Kote\Desktop\ofxMarchingCubes-master\metaball-example\src\main.cpp" />
-    <ClCompile Include="C:\Users\Kote\Desktop\ofxMarchingCubes-master\metaball-example\src\testApp.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\testApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\addons\ofx3DUtils\src\ofx3DGraphics.h" />
@@ -119,8 +119,8 @@
     <ClInclude Include="..\..\..\addons\ofxSTL\src\utils\ofxSTLBinaryWriter.h" />
     <ClInclude Include="..\..\..\addons\ofxSTL\src\utils\ofxSTLReaderBase.h" />
     <ClInclude Include="..\..\..\addons\ofxSTL\src\utils\ofxSTLWriterBase.h" />
-    <ClInclude Include="C:\Users\Kote\Desktop\ofxMarchingCubes-master\metaball-example\src\MetaBall.h" />
-    <ClInclude Include="C:\Users\Kote\Desktop\ofxMarchingCubes-master\metaball-example\src\testApp.h" />
+    <ClInclude Include="src\MetaBall.h" />
+    <ClInclude Include="src\testApp.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
