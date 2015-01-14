@@ -93,7 +93,6 @@
     <ClCompile Include="..\..\..\addons\ofx3DUtils\src\ofx3DGraphics.cpp" />
     <ClCompile Include="..\..\..\addons\ofx3DUtils\src\ofxCamera.cpp" />
     <ClCompile Include="..\..\..\addons\ofx3DUtils\src\ofxLight.cpp" />
-    <ClCompile Include="..\..\..\addons\ofxMarchingCubes\src\ofxMarchingCubes.cpp" />
     <ClCompile Include="..\..\..\addons\ofxSTL\src\ofxSTLExporter.cpp" />
     <ClCompile Include="..\..\..\addons\ofxSTL\src\ofxSTLImporter.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -105,9 +104,6 @@
     <ClInclude Include="..\..\..\addons\ofx3DUtils\src\ofxCamera.h" />
     <ClInclude Include="..\..\..\addons\ofx3DUtils\src\ofxEasyCam.h" />
     <ClInclude Include="..\..\..\addons\ofx3DUtils\src\ofxLight.h" />
-    <ClInclude Include="..\..\..\addons\ofxMarchingCubes\src\ofxMarchingCubes.h" />
-    <ClInclude Include="..\..\..\addons\ofxMarchingCubes\src\ofxMCTypes.h" />
-    <ClInclude Include="..\..\..\addons\ofxMarchingCubes\src\Tables.h" />
     <ClInclude Include="..\..\..\addons\ofxSTL\src\ofxSTL.h" />
     <ClInclude Include="..\..\..\addons\ofxSTL\src\ofxSTLBase.h" />
     <ClInclude Include="..\..\..\addons\ofxSTL\src\ofxSTLExporter.h" />
@@ -119,7 +115,6 @@
     <ClInclude Include="..\..\..\addons\ofxSTL\src\utils\ofxSTLBinaryWriter.h" />
     <ClInclude Include="..\..\..\addons\ofxSTL\src\utils\ofxSTLReaderBase.h" />
     <ClInclude Include="..\..\..\addons\ofxSTL\src\utils\ofxSTLWriterBase.h" />
-    <ClInclude Include="src\MetaBall.h" />
     <ClInclude Include="src\testApp.h" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +126,11 @@
     <ResourceCompile Include="icon.rc">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bin\source.jpg">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

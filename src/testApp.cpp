@@ -1,46 +1,80 @@
 #include "testApp.h"
 
-
 using namespace cv;
 
-//--------------------------------------------------------------
-void testApp::setup(){
-	namedWindow("source", CV_WINDOW_AUTOSIZE );
-	namedWindow("thresh", CV_WINDOW_AUTOSIZE );
+void testApp::setVertices(){
 	Mat src = imread("source.jpg", 1);
 	Mat thresh;
 	imshow("source",src);
 	cvtColor( src, src, CV_BGR2GRAY );
-	int blurRadius = 3;
-
-	for(int z =0;z<15;++z)
+	vboMesh.clear();
+	verticesCount = 0;
+	for(int z =0;z<depth;++z)
 	{
-		threshold( src, thresh, 200, 255,THRESH_BINARY);
-		
-		for(int row = 0; row < thresh.rows; ++row) {
-			for(int col = 0; col < thresh.cols; ++col) {
-				uchar px = thresh.at<uchar>(cv::Point(row, col));
-				if(px == 0){
-					mesh.addVertex(ofVec3f(row,col,z));
-					mesh.addColor(ofFloatColor(0,0,0));
+		threshold( src, thresh, thresholdValue, 255,THRESH_BINARY);			
+		for(int row = 1; row < thresh.rows-1; ++row) {
+			for(int col = 1; col < thresh.cols-1; ++col) {
+				if(thresh.at<uchar>(cv::Point(row, col))==0
+					&& (thresh.at<uchar>(cv::Point(row-1, col-1)) != 0
+					|| thresh.at<uchar>(cv::Point(row-1, col)) != 0
+					|| thresh.at<uchar>(cv::Point(row-1, col+1)) != 0
+					|| thresh.at<uchar>(cv::Point(row, col-1)) != 0
+					|| thresh.at<uchar>(cv::Point(row, col+1)) != 0
+					|| thresh.at<uchar>(cv::Point(row+1, col-1)) != 0
+					|| thresh.at<uchar>(cv::Point(row+1, col)) != 0
+					|| thresh.at<uchar>(cv::Point(row+1, col+1)) != 0
+					|| z == depth-1))
+				{
+					vboMesh.addVertex(ofVec3f(row - src.rows/2, src.cols/2 -col,z));
+					vboMesh.addColor(ofFloatColor(ofColor(100,alpha)));
+					verticesCount++;
 				}
-			}
-			GaussianBlur( src, src, cv::Size(blurRadius , blurRadius ), 0, 0 );
+			}			
 		}
-		ofEnableLighting();
-		light.enable();    
-		light.setup();
+		GaussianBlur( src, src, cv::Size(blurRadius , blurRadius ), 0, 0 );
 	}
+	prevBlurRadiusValue = blurRadius;
+	prevThresholdValue = thresholdValue;
+	prevDepthValue = depth;
+	prevAlphaValue = alpha;
 }
+
+//--------------------------------------------------------------
+void testApp::setup(){
+	glEnable(GL_VERTEX_PROGRAM_POINT_SIZE);
+	glPointSize(15);
+	namedWindow("source", CV_WINDOW_AUTOSIZE );
+	namedWindow("trackBars", CV_WINDOW_AUTOSIZE );
+	blurRadius = 3;
+	thresholdValue = 150;	
+	depth = 20;
+	alpha = 40;
+	cam.setDistance(100);
+	createTrackbar("blurRadius", "trackBars", &blurRadius, 15);
+	createTrackbar("threshold", "trackBars", &thresholdValue, 255);
+	createTrackbar("depth", "trackBars", &depth, 100);
+	createTrackbar("alpha", "trackBars", &alpha, 100);
+	setVertices();
+
+	ofEnableLighting();
+	light.enable();    
+	light.setup();
+}	
+
 //--------------------------------------------------------------
 void testApp::update(){
-
+	if(prevBlurRadiusValue != blurRadius
+		|| prevThresholdValue != thresholdValue
+		|| prevDepthValue != depth
+		|| prevAlphaValue != alpha)
+		setVertices();
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+	ofBackground(ofColor(255,255,255));
 	cam.begin();
-	mesh.drawWireframe();
+	vboMesh.drawVertices();
 	cam.end();
 }
 

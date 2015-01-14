@@ -10,9 +10,6 @@
     <ClCompile Include="..\..\..\addons\ofx3DUtils\src\ofxLight.cpp">
       <Filter>addons\ofx3DUtils\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxMarchingCubes\src\ofxMarchingCubes.cpp">
-      <Filter>addons\ofxMarchingCubes\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxSTL\src\ofxSTLExporter.cpp">
       <Filter>addons\ofxSTL\src</Filter>
     </ClCompile>
@@ -39,12 +36,6 @@
     <Filter Include="addons\ofx3DUtils\src">
       <UniqueIdentifier>{5A6AF4DB-07D7-D814-09DB-0137}</UniqueIdentifier>
     </Filter>
-    <Filter Include="addons\ofxMarchingCubes">
-      <UniqueIdentifier>{CAF5338A-42E9-18A4-F7A9-8256}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxMarchingCubes\src">
-      <UniqueIdentifier>{12A4EC1C-14FE-E37B-88CF-2C00}</UniqueIdentifier>
-    </Filter>
     <Filter Include="addons\ofxSTL">
       <UniqueIdentifier>{01C549D5-DD98-B5F7-E21A-669E}</UniqueIdentifier>
     </Filter>
@@ -70,15 +61,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\addons\ofx3DUtils\src\ofxLight.h">
       <Filter>addons\ofx3DUtils\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxMarchingCubes\src\ofxMarchingCubes.h">
-      <Filter>addons\ofxMarchingCubes\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxMarchingCubes\src\ofxMCTypes.h">
-      <Filter>addons\ofxMarchingCubes\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxMarchingCubes\src\Tables.h">
-      <Filter>addons\ofxMarchingCubes\src</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxSTL\src\ofxSTL.h">
       <Filter>addons\ofxSTL\src</Filter>
@@ -113,14 +95,16 @@
     <ClInclude Include="..\..\..\addons\ofxSTL\src\utils\ofxSTLWriterBase.h">
       <Filter>addons\ofxSTL\src\utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\MetaBall.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\testApp.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bin\source.jpg">
+      <Filter>src</Filter>
+    </Image>
   </ItemGroup>
 </Project>
